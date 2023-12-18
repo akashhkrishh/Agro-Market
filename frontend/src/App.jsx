@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { HomeScreen, LoginScreen, SignupScreen, ProductsDetails, AddProducts, YourProducts, ComplaintScreen, ProfileScreen, NotFound } from './screens';
+import { HomeScreen, LoginScreen,  ProductsDetails, AddProducts, YourProducts, ComplaintScreen, ProfileScreen, NotFound } from './screens';
 import PrivateRoutes from "./auth/PrivateRoutes";
 
 function App() {
@@ -22,7 +22,6 @@ function App() {
           <Route path='/profile' exact element={<ProfileScreen/>} />
         </Route>
         <Route path='/login' exact element={<LoginScreen/>} />
-        <Route path='/signup' exact element={<SignupScreen/>} />
         <Route path='/*' element={<NotFound/>}/>
       </Routes>
 
