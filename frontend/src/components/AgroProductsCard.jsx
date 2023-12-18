@@ -22,7 +22,7 @@ function AgroProductsCard({agroP}) {
                     </div>
                     <div className="col flex-col flex justify-evenly">
                       <p className='flex items-center text-xs gap-1 text-green-600'><FaLocationCrosshairs/><span>{agroP.origin}</span></p>
-                      <p className="row w-full text-xl font-semibold">{agroP.name+" - "+agroP.color}</p>
+                      <p className="row w-full text-[1.2rem] font-semibold">{agroP.name+" - "+agroP.color}</p>
                       <p className="row w-full text-xl font-bold">&#x20B9;{" "+agroP.price}
                       <span className='text-green-600 text-sm font-semibold'>{" / Kg"}</span></p>
                       <p className="row w-full text-xs flex gap-1 items-center"><FaUser color='green'/>

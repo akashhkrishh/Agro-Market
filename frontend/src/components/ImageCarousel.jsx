@@ -20,7 +20,7 @@ const ImageCarousel = ({ images }) => {
   return (
     <Slider style={{borderRadius:"20px",minHeight:"400px",}} {...settings}>
       {images.map((image, index) => (
-        <div  style={{borderRadius:"20px",backgroundColor:"red"}} key={index}>
+        <div  style={{borderRadius:"20px",width:"100%",backgroundColor:"red"}} key={index}>
           <img  style={{borderRadius:"20px"}} src={image} alt={`Slide ${index + 1}`} className="w-full border border-green-600 h-[100%]" />
         </div>
       ))}
