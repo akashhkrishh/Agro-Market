@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { LoginBanner, Logo } from "../assets/images"
+import { LoginBanner,  Upload } from "../assets/images"
 import apiHelper from "../utils/utils"
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -259,8 +259,8 @@ function LoginScreen() {
           <div className="flex-col flex justify-between w-[30%] ">
             <label className="text-center cursor-pointer rounded-md border-green-600 py-2 border text-green-600" htmlFor="simage">Upload Your Picture</label>
             <label htmlFor="simage" className="w-full">
-              <img className="border rounded-md border-green-600  " src={sform.image!=null ?URL.createObjectURL(sform.image)
-                :Logo} alt="" />
+              <img className="border rounded-md border-green-600 cursor-pointer " src={sform.image!=null ?URL.createObjectURL(sform.image)
+                :Upload} alt="" />
             </label>
             <input hidden type="file" name="image"  id="simage" className="w-full" onChange={handleSChange} />
             <button className="text-center py-2 hover:bg-green-700 border bg-green-600 text-white rounded-md" htmlFor="simage">Register</button>

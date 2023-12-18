@@ -6,6 +6,7 @@ import Logo from "../images/logo.png";
 import NotFoundImg  from "../images/NotFound.svg";
 import BackgroundImg from "../images/bg.png"
 import LoginBanner from "../images/banner.png";
+import Upload from "../images/Upload.jpg"
 
 
 export const CarouselImages = [
@@ -21,4 +22,5 @@ export {
     Logo,
     NotFoundImg,
     BackgroundImg,
+    Upload
 }
