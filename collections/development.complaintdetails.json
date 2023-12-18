@@ -1,0 +1,98 @@
+[{
+  "_id": {
+    "$oid": "657e8e13850ddaa0dc41adb9"
+  },
+  "title": "Login Issue",
+  "type": "Technical",
+  "date": "17-11-2023",
+  "status": true,
+  "description": "Can't Login to Home Screen",
+  "owner": {
+    "$oid": "657a853323356904c5773f8c"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657e8f4d69895673dcfa605f"
+  },
+  "title": "Add Product",
+  "type": "Technical",
+  "date": "17-11-2023",
+  "status": true,
+  "description": "Can't Add Products",
+  "owner": {
+    "$oid": "657a84c123356904c5773f8a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657e8f7769895673dcfa6082"
+  },
+  "title": "Buy Product",
+  "type": "Return and Refund",
+  "date": "17-11-2023",
+  "status": true,
+  "description": "Seller's gives a bad product",
+  "owner": {
+    "$oid": "657a84c123356904c5773f8a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657eae7be308b86f08303539"
+  },
+  "title": "ssss",
+  "type": "Return and Refund",
+  "date": "17-11-2023",
+  "status": true,
+  "description": "sss",
+  "owner": {
+    "$oid": "657a811b47b3f977e8ee9b2c"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657fc55b4b1781899304758a"
+  },
+  "title": "Delays",
+  "type": "Delivery Issue",
+  "date": "18-11-2023",
+  "status": true,
+  "description": "Product Can't get On Time",
+  "owner": {
+    "$oid": "657a84c123356904c5773f8a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657fdb338018295a66d1dd5d"
+  },
+  "title": "Responsiveness",
+  "type": "Others",
+  "date": "18-11-2023",
+  "status": true,
+  "description": "This site load slow and not Responsive",
+  "owner": {
+    "$oid": "657aaf3cd554be59ecdf8746"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657ff72fb1d8e69896f98878"
+  },
+  "title": "Complaint",
+  "type": "Others",
+  "date": "18-11-2023",
+  "status": true,
+  "description": "This Complaint Page is one of the Complaint",
+  "owner": {
+    "$oid": "657ff6f1b1d8e69896f98868"
+  },
+  "__v": 0
+}]
