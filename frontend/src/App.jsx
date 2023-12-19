@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { HomeScreen, LoginScreen,  ProductsDetails, AddProducts, YourProducts, ComplaintScreen,NotFound, AdminScreen, Dashboard } from './screens';
+import { HomeScreen, LoginScreen,  ProductsDetails, AddProducts, YourProducts, ComplaintScreen,NotFound, AdminScreen, Dashboard, AdminAgroProducts, AdminComplaints } from './screens';
 import PrivateRoutes from "./auth/PrivateRoutes";
 import AdminRoutes from "./auth/AdminRoutes";
 import {useNavigate} from 'react-router-dom'
@@ -29,6 +29,9 @@ function App() {
 
         <Route element={<AdminRoutes />}>
           <Route path='/admin/dashboard' exact element={<Dashboard />} />
+          <Route path='/admin/dashboard/allproducts' exact element={<AdminAgroProducts />} />
+          <Route path='/admin/dashboard/complaints' exact element={<AdminComplaints />} />
+
         </Route>
         <Route path='/admin' exact element={<AdminScreen/>} />
         <Route path='/login' exact element={<LoginScreen/>} />

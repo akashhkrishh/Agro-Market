@@ -5,14 +5,13 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const { validAdmin } = require('../utils/middleware');
 const upload = multer();
-
-
+const User = require("../models/userSchema");
+const Complaint = require("../models/complaintSchema")
 
 router.post("/login",async(req,res)=>{
 
     const { email, pass } = req.body;
        
-    
     try{
 
         const emailExists = await Admin.findOne({
@@ -47,5 +46,47 @@ router.get("/test",validAdmin,(req,res)=>{
     return res.send("OK")
 })
 
+router.post('/register',async(req,res)=>{
+
+    try{
+        
+        
+        const { name, email, pass, } = req.body;
+        const hash_pass = await bcrypt.hash(pass,10);
+        
+        const admin= new Admin({
+        
+            name: name,
+            email: email,
+            pass: hash_pass,
+
+        });
+
+        const result = await admin.save();
+        return res.status(201).send({
+            message: 'File uploaded successfully',
+        });
+    }
+    catch(error){
+        if (error.code === 11000) {
+            return res.status(409).json({ 
+                error: "This Email already Exists"
+            });
+        }
+        console.log(error);
+    } 
+
+});
+
+
+router.get("/getUsers",async(req,res)=>{
+    const userDetails = await User.find().select(["-pass"]);
+    return res.json(userDetails);
+})
+
+router.get("/complaints",async(req,res)=>{
+    const userDetails = await Complaint.find().populate('owner',{name:true});
+    return res.json(userDetails);
+})
 
 module.exports = router;

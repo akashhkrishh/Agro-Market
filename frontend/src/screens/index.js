@@ -8,6 +8,8 @@ import ProfileScreen from "./ProfileScreen";
 import NotFound from "./NotFound";
 import Dashboard from "./Dashboard";
 import AdminScreen from "./AdminScreen";
+import AdminAgroProducts from "./AdminAgroProducts";
+import AdminComplaints from "./AdminComplaints";
 
 
 export {
@@ -20,5 +22,7 @@ export {
     ProfileScreen,
     NotFound,
     AdminScreen,
+    AdminAgroProducts,
+    AdminComplaints,
     Dashboard
 }

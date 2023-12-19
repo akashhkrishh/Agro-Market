@@ -1,5 +1,5 @@
 
-export const navLinks = [
+const navLinks = [
     {
         navLink: "/",
         navLabel: "Home" 
@@ -22,3 +22,27 @@ export const navLinks = [
     },
    
 ]
+
+
+const adminNavLinks = [
+    {
+        navLink: "/admin/dashboard",
+        navLabel: "All Users" 
+    },
+    {
+        navLink: "/admin/dashboard/allproducts",
+        navLabel: "Agro Products" 
+    },
+    {
+        navLink: "/admin/dashboard/complaints",
+        navLabel: "Complaints" 
+    },
+    
+   
+]
+
+
+export {
+    adminNavLinks,
+    navLinks
+}
