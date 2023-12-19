@@ -6,6 +6,8 @@ import AddProducts from "./AddProducts";
 import ComplaintScreen from "./ComplaintScreen";
 import ProfileScreen from "./ProfileScreen";
 import NotFound from "./NotFound";
+import Dashboard from "./Dashboard";
+import AdminScreen from "./AdminScreen";
 
 
 export {
@@ -17,4 +19,6 @@ export {
     ComplaintScreen,
     ProfileScreen,
     NotFound,
+    AdminScreen,
+    Dashboard
 }

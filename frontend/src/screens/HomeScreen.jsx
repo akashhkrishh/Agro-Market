@@ -12,6 +12,7 @@ const HomeScreen = () => {
   const content = " Agro Market is a web application that helps the farmer and businessman to interact with each other without any mediator.\n This system will help the farmer to get the actual price for his inputs (crops)."
 
   useEffect(()=>{
+    
     apiHelper.get("/api/username").then((res)=>{setUname(res.data)})
   },[]);
 

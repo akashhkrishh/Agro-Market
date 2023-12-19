@@ -7,7 +7,6 @@ const AdminRoutes = () => {
     let auth = {'token':token!=null && token!=""}
     return(
         auth.token ? <main >
-            <NavBar/>
             <div style={{marginTop:"12vh"}}></div>
            
             <Outlet /> 

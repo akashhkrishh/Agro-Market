@@ -12,9 +12,9 @@ const upload = multer();
 
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productRouter');
-const { validUser } = require('./utils/middleware');
-const complaintSchema = require('./models/complaintSchema');
-const complaintRouter = require("./routes/complainRouter")
+const { validUser, validAdmin } = require('./utils/middleware');
+const complaintRouter = require("./routes/complainRouter");
+const adminRouter = require("./routes/adminRouter")
 const port = process.env.PORT || 9000;
 
 app.use(express.json());
@@ -23,6 +23,7 @@ app.use(morgan('dev'));
 app.use("/api",userRouter);
 app.use('/api/products',validUser,productRouter);
 app.use("/api/complaints",validUser,complaintRouter);
+app.use("/api/admin",adminRouter);
 
 
 app.get('/',(req,res)=>{
