@@ -29,12 +29,12 @@ const adminNavLinks = [
         navLink: "/admin/dashboard",
         navLabel: "All Users" 
     },
+    // {
+    //     navLink: "/admin/dashboard/allproducts",
+    //     navLabel: "Agro Products" 
+    // },
     {
-        navLink: "/admin/dashboard/allproducts",
-        navLabel: "Agro Products" 
-    },
-    {
-        navLink: "/admin/dashboard/complaints",
+        navLink: "/admin/complaints",
         navLabel: "Complaints" 
     },
     

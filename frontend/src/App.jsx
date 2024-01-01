@@ -30,7 +30,7 @@ function App() {
         <Route element={<AdminRoutes />}>
           <Route path='/admin/dashboard' exact element={<Dashboard />} />
           <Route path='/admin/dashboard/allproducts' exact element={<AdminAgroProducts />} />
-          <Route path='/admin/dashboard/complaints' exact element={<AdminComplaints />} />
+          <Route path='/admin/complaints' exact element={<AdminComplaints />} />
 
         </Route>
         <Route path='/admin' exact element={<AdminScreen/>} />

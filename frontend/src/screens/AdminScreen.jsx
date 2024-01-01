@@ -6,6 +6,15 @@ import { toast } from 'react-toastify';
 
 
 function AdminScreen() {
+    useEffect(()=>{
+        if(token != null || token == ""){
+            return window.nav("/admin/dashboard")
+         }
+    },[])
+    
+    const token = localStorage.getItem('token')
+    
+    
     const [aform,setFrom] = useState({
         aemail:"",
         apass: "",
@@ -18,9 +27,9 @@ function AdminScreen() {
             [name]:value,
         }))
     }
-    console.log(aform);
-
+    
     const nav = useNavigate();
+
     const handleSubmit = (e) =>{
         e.preventDefault();
         e.stopPropagation();

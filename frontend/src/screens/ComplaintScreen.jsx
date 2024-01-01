@@ -42,7 +42,9 @@ function ComplaintScreen() {
   const handleSubmit = (e) =>{
     e.preventDefault();
     e.stopPropagation();
- 
+  
+    if(complaint.type == "")
+      return toast.error("Type must be Filled!")
     apiHelper.post("/api/complaints/add",complaint)
     .then((res)=>{
         toast.success(res.data);
@@ -66,37 +68,38 @@ function ComplaintScreen() {
           <h1 className='text-2xl font-semibold'>Complaint Page</h1>
           <button className='py-2 bg-green-600 text-white rounded-md font-semibold px-4' onClick={openModal}>Add Complaint</button>
         </div>
-
-
-        <table className="w-full table">
-          <thead className=' rounded-md text-white'>
-            <tr className=' bg-green-600  rounded-md flex items-center justify-center  h-[50px] border'>
-              <th className='w-[5%] '>ID</th>
-              <th className='w-[15%] '>Type</th>
-              <th className='w-[20%] '>Title</th>
-              <th className='w-[27%] '>Description</th>
-              <th className='w-[15%] '>Status</th>
-              <th className='w-[10%] '>Date</th>
-              <th className='w-[8%] flex justify-center text-xl '><MdModeEdit/></th>
+        <table className="min-w-full text-center font-light">
+          <thead
+            className="border-b bg-neutral-50 font-medium dark:border-neutral-500 dark:text-neutral-800">
+            <tr>
+              <th scope="col" className=" px-6 py-4">#</th>
+              <th scope="col" className=" px-6 py-4">Type</th>
+              <th scope="col" className=" px-6 py-4">Title</th>
+              <th scope="col" className=" px-6 py-4">Description</th>
+              <th scope="col" className=" px-6 py-4">Status</th>
+              <th scope="col" className=" px-6 py-4">Date</th>
+              <th scope="col" className=" px-6 py-4"><MdModeEdit/></th>
             </tr>
           </thead>
           <tbody>
-            {
-              complaintlist.length ==0 &&
-             <div className='w-full text-lg font-semibold flex items-center justify-center h-[50vh]'>You haven't register any complaints</div>
-            }
-          {complaintlist.map((item,i)=>{
-            return(
-              
-              <ComplaintCard onDelete={fetchComplaint} key={item._id} item={item} i={i}/>
-              
-              );
-            })}
             
+            
+             {complaintlist.map((item,i)=>{
+               return(
+                 <ComplaintCard onDelete={fetchComplaint} key={item._id} item={item} i={i}/>
+                 
+                 );
+               })
+            }
+           
+           
           </tbody>
-                    
         </table>
-        
+        {
+        complaintlist.length ==0 &&
+        <div className='w-full text-lg font-semibold flex items-center justify-center h-[50vh]'>You haven't register any complaints</div>
+        }
+
       </div>
 
       <ReactModal isOpen={isEdit}  style={{
@@ -123,7 +126,7 @@ function ComplaintScreen() {
       <div className="flex flex-col mb-3 justify-center items-start row">
         <label className="font-semibold" htmlFor="Type">Complaint Type</label>
         <select className='input mt-2' name="type" onChange={handleChange} id="" required>
-        <option value="" disabled selected>Select an option</option>
+        <option defaultValue="" >Select an option</option>
           <option style={{height:"100px"}} className='p-3' defaultValue="Technical">Technical</option>
           <option className='p-3' defaultValue="Delivery">Delivery Issue</option>
           <option className='p-3' defaultValue="Return and Refund">Return and Refund</option>

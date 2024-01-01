@@ -10,6 +10,7 @@ import Dashboard from "./Dashboard";
 import AdminScreen from "./AdminScreen";
 import AdminAgroProducts from "./AdminAgroProducts";
 import AdminComplaints from "./AdminComplaints";
+import UserCard from "../components/UserCard";
 
 
 export {
@@ -24,5 +25,7 @@ export {
     AdminScreen,
     AdminAgroProducts,
     AdminComplaints,
-    Dashboard
+    Dashboard,
+    UserCard,
+    
 }

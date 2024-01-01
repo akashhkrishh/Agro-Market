@@ -12,7 +12,7 @@ function AdminNavBar() {
   }
   return (
     <div className="w-full fixed pl-44 pr-44 top-0 h-[10vh] bg-white shadow-md flex items-center justify-between">
-    <ul className='flex items-center justify-center text-lg font-semibold  gap-10'>
+    <ul className='flex items-center justify-center font-semibold  gap-10'>
     {
       adminNavLinks.map((items,i)=>{
         return(

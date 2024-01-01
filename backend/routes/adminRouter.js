@@ -79,12 +79,12 @@ router.post('/register',async(req,res)=>{
 });
 
 
-router.get("/getUsers",async(req,res)=>{
+router.get("/getUsers",validAdmin,async(req,res)=>{
     const userDetails = await User.find().select(["-pass"]);
     return res.json(userDetails);
 })
 
-router.get("/complaints",async(req,res)=>{
+router.get("/complaints",validAdmin,async(req,res)=>{
     const userDetails = await Complaint.find().populate('owner',{name:true});
     return res.json(userDetails);
 })
