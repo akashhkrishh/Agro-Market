@@ -57,9 +57,7 @@ function ComplaintCard({item,i,onDelete}) {
           <button className='w-[50%] rounded-md py-2
           hover:bg-red-700 bg-red-600' onClick={closeDModal}>No</button>
         </div>
-        
-
-            </ReactModal>
+        </ReactModal>
     </>
     
       

@@ -45,8 +45,11 @@ function LoginScreen() {
 
 
   const handleSubmit = (e) =>{
-
     e.preventDefault();
+    if(form.pass.length < 8)
+      return toast.error("Password Must be 8 Letters")
+
+    
     apiHelper.post("/api/login",{
       email: form.email,
       pass: form.pass,
@@ -78,19 +81,24 @@ function LoginScreen() {
   
  
   
-
+    
     if(!emailRegex.test(sform.email))
       return toast.error("Email not Valid")
     
     if(!phoneRegex.test(sform.contact))
       return toast.error("Contact no not Valid")
 
+    if(sform.pass.length < 8)
+      return toast.error("Password Must be 8 Letters")
+    
     if(sform.pass != sform.cpass)
       return toast.error("Password Doesn't Match")
 
     if(sform.image == null){
       return toast.error("Image Required !")
     }
+    if(sform.pass.length < 8)
+      return toast.error("Password Must be 8 Letters")
 
     try{
       const dform = new FormData();
@@ -243,7 +251,7 @@ function LoginScreen() {
                   value={sform.pass} 
                   name="pass"
                   onChange={handleSChange}
-                  type="text" id="password" className="input" required/>
+                  type="password" id="password" className="input" required/>
                 </div>
               <div className="flex gap-1 flex-col w-full">
                 <label htmlFor="cpassword">Confirm Password</label>
@@ -251,7 +259,7 @@ function LoginScreen() {
                 value={sform.cpass} 
                 name="cpass"
                 onChange={handleSChange}
-                type="text" id="cpassword" className="input" required/>
+                type="password" id="cpassword" className="input" required/>
               </div>
             </div>
             

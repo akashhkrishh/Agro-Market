@@ -90,10 +90,14 @@ router.get("/user",validUser,async (req,res)=>{
 })
 
 router.put("/user",validUser,async (req,res)=>{
-    await User.updateOne({email:req.user.email},{
-        name:req.body.name
-    })
-    return res.send(req.user)
+    try{
+        await User.updateOne({email:req.user.email},{
+            name:req.body.name
+        })
+        return res.send(req.user)
+    }catch(err){
+        return res.sendStatus(404)
+    }
 })
 
 
